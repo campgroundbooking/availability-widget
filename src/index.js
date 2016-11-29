@@ -1,5 +1,4 @@
 import $ from 'jquery';
-import webcomponents from 'webcomponents.js/webcomponents-lite.js';
 
 import { calendar } from './calendar';
 
@@ -8,10 +7,25 @@ import moment from 'moment';
 import template from './template.html';
 import style from './sass/index.scss';
 
+require('webcomponents.js');
+
+if (typeof HTMLElement !== 'function'){
+    var _HTMLElement = function(){};
+    _HTMLElement.prototype = HTMLElement.prototype;
+    HTMLElement = _HTMLElement;
+}
+
 class CampgroundBookingWidget extends HTMLElement {
   createdCallback() {
     this.output = {};
-    this.createShadowRoot().innerHTML = `<style>${style}</style>` + template;
+    if(this.attachShadow) {
+      this.attachShadow({mode: 'open'});
+    } else if(this.createShadowRoot) {
+      this.createShadowRoot();
+    } else {
+      throw new Error('Unsupported browser');
+    }
+    this.shadowRoot.innerHTML = `<style>${style}</style>` + template;
     if(!this.calendar){
       this.calendar = calendar(this.shadowRoot, (start, end) => {
         this.output.start = moment(start).toISOString();
