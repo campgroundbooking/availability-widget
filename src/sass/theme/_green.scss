@@ -1,0 +1,19 @@
+.container.theme-green {
+	background-color: #37bc9b;
+
+  form {
+    color: #fff;
+  }
+	.actions {
+		button.primary {
+			$button-color: #bc9600;
+			background-color: $button-color;
+			border-color: lighten($button-color, 20);
+
+			&:hover {
+				background-color: lighten($button-color, 20);
+				border-color: $button-color;
+			}
+		}
+	}
+}

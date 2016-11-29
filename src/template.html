@@ -1,0 +1,28 @@
+<div class="container">
+	<div class="daterange daterange--double"></div>
+	<form id="mainForm">
+		<div class="row">
+			<div class="field">
+				<label for="siteType">Site Type:</label>
+				<select id="siteType">
+					<option value="tent">Tent</option>
+					<option value="rv">RV</option>
+					<option value="cabin">Cabin</option>
+				</select>
+			</div>
+			<div class="field">
+				<label for="rvlength">RV Length (feet):</label>
+				<input id="rvlength" type="number" min="0" step="1"></input>
+			</div>
+		</div>
+		<div class="row">
+			<div class="field">
+				<label for="guests">Number of Guests:</label>
+				<input id="guest" type="number" min="1" step="1"></input>
+			</div>
+		</div>
+	</form>
+	<div class="actions">
+		<button id="save" class="primary">Check Availability</button>
+	</div>
+</div>

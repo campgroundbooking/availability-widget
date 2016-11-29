@@ -1,0 +1,18 @@
+.container.theme-gold {
+	background-color: #bc9600;
+  form {
+    color: #fff;
+  }
+	.actions {
+		button.primary {
+			$button-color: #37bc9b;
+			background-color: $button-color;
+			border-color: lighten($button-color, 20);
+
+			&:hover {
+				background-color: lighten($button-color, 20);
+				border-color: $button-color;
+			}
+		}
+	}
+}
