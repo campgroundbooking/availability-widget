@@ -1,38 +1,55 @@
 <!DOCTYPE html>
 <html lang="en-us">
-  <head>
-    <meta charset="UTF-8">
-    <title>Availability-widget by campgroundbooking</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
-  </head>
-  <body>
-    <section class="page-header">
-      <h1 class="project-name">Availability-widget</h1>
-      <h2 class="project-tagline">Webcomponent based widget for CampgroundBooking.com availablity</h2>
-      <a href="https://github.com/campgroundbooking/availability-widget" class="btn">View on GitHub</a>
-      <a href="https://github.com/campgroundbooking/availability-widget/zipball/master" class="btn">Download .zip</a>
-      <a href="https://github.com/campgroundbooking/availability-widget/tarball/master" class="btn">Download .tar.gz</a>
-    </section>
 
-    <section class="main-content">
-      <h1>
+<head>
+  <meta charset="UTF-8">
+  <title>Availability-widget by campgroundbooking</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="pagesstylesheets/normalize.css" media="screen">
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" href="pagesstylesheets/stylesheet.css" media="screen">
+  <link rel="stylesheet" type="text/css" href="pages/stylesheets/github-light.css" media="screen">
+  <script src="dist/campgroundbooking-widget.js"></script>
+
+  <style>
+  .page-container {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: visible;
+  }
+
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -1rem;
+  }
+
+  campgroundbooking-widget {
+    flex: 0 1 200px;
+    margin: 1rem;
+  }
+  </style>
+</head>
+
+<body>
+  <section class="page-header">
+    <h1 class="project-name">Availability-widget</h1>
+    <h2 class="project-tagline">Webcomponent based widget for CampgroundBooking.com availablity</h2>
+    <a href="https://github.com/campgroundbooking/availability-widget" class="btn">View on GitHub</a>
+    <a href="https://github.com/campgroundbooking/availability-widget/zipball/master" class="btn">Download .zip</a>
+    <a href="https://github.com/campgroundbooking/availability-widget/tarball/master" class="btn">Download .tar.gz</a>
+  </section>
+  <section class="main-content">
+    <h1>
 <a id="campgroundbooking-availability-widget" class="anchor" href="#campgroundbooking-availability-widget" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>CampgroundBooking Availability Widget</h1>
-
-<p>Widget to check the availability of a campsite/campground through CampgroundBooking.com.</p>
-
-<h2>
+    <p>Widget to check the availability of a campsite/campground through CampgroundBooking.com.</p>
+    <h2>
 <a id="installation" class="anchor" href="#installation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Installation</h2>
-
-<div class="highlight highlight-source-shell"><pre>npm i @campgroundbooking/availability-widget</pre></div>
-
-<h2>
+    <div class="highlight highlight-source-shell"><pre>npm i @campgroundbooking/availability-widget</pre></div>
+    <h2>
 <a id="usage" class="anchor" href="#usage" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Usage</h2>
-
-<div class="highlight highlight-text-html-basic"><pre>&lt;!DOCTYPE html&gt;
+    <div class="highlight highlight-text-html-basic"><pre>&lt;!DOCTYPE html&gt;
 &lt;<span class="pl-ent">html</span> <span class="pl-e">lang</span>=<span class="pl-s"><span class="pl-pds">"</span>en<span class="pl-pds">"</span></span>&gt;
 &lt;<span class="pl-ent">head</span>&gt;
   &lt;<span class="pl-ent">meta</span> <span class="pl-e">charset</span>=<span class="pl-s"><span class="pl-pds">"</span>UTF-8<span class="pl-pds">"</span></span>&gt;
@@ -43,36 +60,38 @@
   &lt;<span class="pl-ent">campgroundbooking</span><span class="pl-e">-widget</span> <span class="pl-e">theme</span>=<span class="pl-s"><span class="pl-pds">"</span>blue<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">campgroundbooking</span><span class="pl-e">-widget</span>&gt;
 &lt;/<span class="pl-ent">body</span>&gt;
 &lt;/<span class="pl-ent">html</span>&gt;</pre></div>
-
-<h3>
+    <h3>
 <a id="options" class="anchor" href="#options" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Options</h3>
-
-<ul>
-<li>
-<em>theme</em> - A theme  to load (e.g. green, red, blue, gold)</li>
-<li>
-<em>client-id</em> - Your campground booking client id</li>
-<li>
-<em>campground</em> - The id of the campground to check</li>
-<li>
-<em>site</em> (optional) - The id of a site to check, if no site given checks the whole campground</li>
-<li>
-<em>server</em> (optional) - The campground booking server to connect to (default <a href="https://app.campgorundbooking.com">https://app.campgorundbooking.com</a>)</li>
-</ul>
-
-<h2>
+    <ul>
+      <li>
+        <em>theme</em> - A theme to load (e.g. green, red, blue, gold)</li>
+      <li>
+        <em>client-id</em> - Your campground booking client id</li>
+      <li>
+        <em>campground</em> - The id of the campground to check</li>
+      <li>
+        <em>site</em> (optional) - The id of a site to check, if no site given checks the whole campground</li>
+      <li>
+        <em>server</em> (optional) - The campground booking server to connect to (default <a href="https://app.campgorundbooking.com">https://app.campgorundbooking.com</a>)</li>
+    </ul>
+    <h2>Demo</h2>
+    <div class="page-container">
+      <div class="container">
+        <campgroundbooking-widget></campgroundbooking-widget>
+        <campgroundbooking-widget theme="blue"></campgroundbooking-widget>
+        <campgroundbooking-widget theme="red"></campgroundbooking-widget>
+        <campgroundbooking-widget theme="green"></campgroundbooking-widget>
+        <campgroundbooking-widget theme="gold"></campgroundbooking-widget>
+      </div>
+    </div>
+    <h2>
 <a id="license" class="anchor" href="#license" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>License</h2>
+    <p>MIT</p>
+    <footer class="site-footer">
+      <span class="site-footer-owner"><a href="https://github.com/campgroundbooking/availability-widget">Availability-widget</a> is maintained by <a href="https://github.com/campgroundbooking">campgroundbooking</a>.</span>
+      <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+    </footer>
+  </section>
+</body>
 
-<p>MIT</p>
-
-      <footer class="site-footer">
-        <span class="site-footer-owner"><a href="https://github.com/campgroundbooking/availability-widget">Availability-widget</a> is maintained by <a href="https://github.com/campgroundbooking">campgroundbooking</a>.</span>
-
-        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
-      </footer>
-
-    </section>
-
-  
-  </body>
 </html>
